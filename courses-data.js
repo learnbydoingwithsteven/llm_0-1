@@ -1,0 +1,135 @@
+// Complete course data for all 100 LLM courses
+const COURSES_DATA = [
+    // Module 1: Foundations (001-010)
+    { id: "001", name: "introduction_to_language_models", title: "Introduction to Language Models", module: 1, description: "Learn the fundamentals of language models, from n-grams to neural approaches" },
+    { id: "002", name: "tokenization_fundamentals", title: "Tokenization Fundamentals", module: 1, description: "Master text tokenization techniques and vocabulary building" },
+    { id: "003", name: "word2vec_embeddings", title: "Word2Vec Embeddings", module: 1, description: "Understand Word2Vec: Skip-gram and CBOW architectures" },
+    { id: "004", name: "glove_embeddings", title: "GloVe Embeddings", module: 1, description: "Explore Global Vectors for word representation" },
+    { id: "005", name: "contextual_embeddings", title: "Contextual Embeddings", module: 1, description: "Learn context-dependent word representations" },
+    { id: "006", name: "sequence_modeling", title: "Sequence Modeling", module: 1, description: "Introduction to sequential data processing" },
+    { id: "007", name: "rnn_fundamentals", title: "RNN Fundamentals", module: 1, description: "Recurrent Neural Networks basics and applications" },
+    { id: "008", name: "lstm_networks", title: "LSTM Networks", module: 1, description: "Long Short-Term Memory networks in depth" },
+    { id: "009", name: "gru_networks", title: "GRU Networks", module: 1, description: "Gated Recurrent Units and their advantages" },
+    { id: "010", name: "attention_basics", title: "Attention Mechanism Basics", module: 1, description: "Foundation of attention mechanisms" },
+
+    // Module 2: Text Processing (011-020)
+    { id: "011", name: "text_preprocessing", title: "Text Preprocessing Pipeline", module: 2, description: "Complete text cleaning and preparation workflow" },
+    { id: "012", name: "byte_pair_encoding", title: "Byte-Pair Encoding", module: 2, description: "BPE algorithm for subword tokenization" },
+    { id: "013", name: "wordpiece", title: "WordPiece Tokenization", module: 2, description: "WordPiece algorithm used in BERT" },
+    { id: "014", name: "sentencepiece", title: "SentencePiece", module: 2, description: "Language-independent tokenization" },
+    { id: "015", name: "subword_regularization", title: "Subword Regularization", module: 2, description: "Improve robustness with subword sampling" },
+    { id: "016", name: "language_detection", title: "Language Detection", module: 2, description: "Automatic language identification techniques" },
+    { id: "017", name: "text_normalization", title: "Text Normalization", module: 2, description: "Standardize text for processing" },
+    { id: "018", name: "ner", title: "Named Entity Recognition", module: 2, description: "Extract entities from text" },
+    { id: "019", name: "pos_tagging", title: "POS Tagging", module: 2, description: "Part-of-speech tagging methods" },
+    { id: "020", name: "dependency_parsing", title: "Dependency Parsing", module: 2, description: "Analyze grammatical structure" },
+
+    // Module 3: Neural Networks (021-030)
+    { id: "021", name: "neural_networks", title: "Neural Network Fundamentals", module: 3, description: "Core concepts of neural networks" },
+    { id: "022", name: "backpropagation", title: "Backpropagation", module: 3, description: "Understanding gradient descent and backprop" },
+    { id: "023", name: "optimization", title: "Optimization Algorithms", module: 3, description: "SGD, Adam, AdamW, and more" },
+    { id: "024", name: "regularization", title: "Regularization Techniques", module: 3, description: "Prevent overfitting with L1, L2, dropout" },
+    { id: "025", name: "batch_norm", title: "Batch Normalization", module: 3, description: "Normalize activations for stable training" },
+    { id: "026", name: "layer_norm", title: "Layer Normalization", module: 3, description: "Layer-wise normalization for transformers" },
+    { id: "027", name: "dropout", title: "Dropout Variants", module: 3, description: "Dropout, DropConnect, and variations" },
+    { id: "028", name: "activations", title: "Activation Functions", module: 3, description: "ReLU, GELU, Swish, and more" },
+    { id: "029", name: "loss_functions", title: "Loss Functions for NLP", module: 3, description: "Cross-entropy, focal loss, contrastive loss" },
+    { id: "030", name: "gradient_flow", title: "Gradient Flow Analysis", module: 3, description: "Understand vanishing and exploding gradients" },
+
+    // Module 4: Transformers (031-040)
+    { id: "031", name: "transformer", title: "Transformer Architecture", module: 4, description: "Complete transformer architecture overview" },
+    { id: "032", name: "self_attention", title: "Self-Attention Mechanism", module: 4, description: "Query, key, value attention mechanism" },
+    { id: "033", name: "multi_head_attention", title: "Multi-Head Attention", module: 4, description: "Parallel attention heads for rich representations" },
+    { id: "034", name: "positional_encoding", title: "Positional Encoding", module: 4, description: "Inject position information into embeddings" },
+    { id: "035", name: "ffn", title: "Feed-Forward Networks", module: 4, description: "Position-wise feed-forward layers" },
+    { id: "036", name: "encoder", title: "Encoder Architecture", module: 4, description: "Transformer encoder in detail" },
+    { id: "037", name: "decoder", title: "Decoder Architecture", module: 4, description: "Transformer decoder with masking" },
+    { id: "038", name: "cross_attention", title: "Cross-Attention", module: 4, description: "Attend between encoder and decoder" },
+    { id: "039", name: "transformer_variants", title: "Transformer Variants", module: 4, description: "GPT, BERT, T5, and other variants" },
+    { id: "040", name: "attention_viz", title: "Attention Visualization", module: 4, description: "Visualize and interpret attention patterns" },
+
+    // Module 5: Pre-training (041-050)
+    { id: "041", name: "lm_objectives", title: "Language Modeling Objectives", module: 5, description: "Different pre-training objectives" },
+    { id: "042", name: "mlm", title: "Masked Language Modeling", module: 5, description: "BERT-style masked prediction" },
+    { id: "043", name: "clm", title: "Causal Language Modeling", module: 5, description: "GPT-style autoregressive modeling" },
+    { id: "044", name: "nsp", title: "Next Sentence Prediction", module: 5, description: "Sentence relationship prediction" },
+    { id: "045", name: "bert_pretrain", title: "BERT Pre-training", module: 5, description: "Complete BERT pre-training process" },
+    { id: "046", name: "gpt_pretrain", title: "GPT Pre-training", module: 5, description: "GPT pre-training methodology" },
+    { id: "047", name: "t5_pretrain", title: "T5 Pre-training", module: 5, description: "Text-to-Text Transfer Transformer" },
+    { id: "048", name: "data_curation", title: "Pre-training Data Curation", module: 5, description: "Build high-quality training datasets" },
+    { id: "049", name: "curriculum_learning", title: "Curriculum Learning", module: 5, description: "Progressive difficulty in training" },
+    { id: "050", name: "multitask_pretrain", title: "Multi-task Pre-training", module: 5, description: "Train on multiple tasks simultaneously" },
+
+    // Module 6: Fine-tuning (051-060)
+    { id: "051", name: "transfer_learning", title: "Transfer Learning Basics", module: 6, description: "Adapt pre-trained models to new tasks" },
+    { id: "052", name: "full_finetune", title: "Full Fine-tuning", module: 6, description: "Update all model parameters" },
+    { id: "053", name: "feature_extraction", title: "Feature Extraction", module: 6, description: "Use frozen model as feature extractor" },
+    { id: "054", name: "adapters", title: "Adapter Layers", module: 6, description: "Efficient fine-tuning with adapters" },
+    { id: "055", name: "lora", title: "LoRA", module: 6, description: "Low-Rank Adaptation for efficient tuning" },
+    { id: "056", name: "prefix_tuning", title: "Prefix Tuning", module: 6, description: "Optimize continuous prompts" },
+    { id: "057", name: "prompt_tuning", title: "Prompt Tuning", module: 6, description: "Soft prompt optimization" },
+    { id: "058", name: "few_shot", title: "Few-Shot Learning", module: 6, description: "Learn from limited examples" },
+    { id: "059", name: "zero_shot", title: "Zero-Shot Learning", module: 6, description: "Generalize without task-specific training" },
+    { id: "060", name: "multitask_finetune", title: "Multi-task Fine-tuning", module: 6, description: "Fine-tune on multiple tasks" },
+
+    // Module 7: Advanced Methods (061-070)
+    { id: "061", name: "rlhf", title: "RLHF", module: 7, description: "Reinforcement Learning from Human Feedback" },
+    { id: "062", name: "ppo", title: "PPO", module: 7, description: "Proximal Policy Optimization for LLMs" },
+    { id: "063", name: "dpo", title: "DPO", module: 7, description: "Direct Preference Optimization" },
+    { id: "064", name: "rag", title: "RAG", module: 7, description: "Retrieval-Augmented Generation" },
+    { id: "065", name: "chain_of_thought", title: "Chain-of-Thought", module: 7, description: "Step-by-step reasoning prompting" },
+    { id: "066", name: "react", title: "ReAct", module: 7, description: "Reasoning and Acting together" },
+    { id: "067", name: "llm_agents", title: "LLM Agents", module: 7, description: "Build autonomous LLM agents" },
+    { id: "068", name: "tool_use", title: "Tool Use", module: 7, description: "Function calling and tool integration" },
+    { id: "069", name: "multi_agent", title: "Multi-Agent Systems", module: 7, description: "Coordinate multiple LLM agents" },
+    { id: "070", name: "constitutional_ai", title: "Constitutional AI", module: 7, description: "Value alignment through principles" },
+
+    // Module 8: Optimization (071-080)
+    { id: "071", name: "quantization", title: "Model Quantization", module: 8, description: "Reduce model size with quantization" },
+    { id: "072", name: "distillation", title: "Knowledge Distillation", module: 8, description: "Transfer knowledge to smaller models" },
+    { id: "073", name: "pruning", title: "Pruning Techniques", module: 8, description: "Remove unnecessary parameters" },
+    { id: "074", name: "mixed_precision", title: "Mixed Precision Training", module: 8, description: "Train with FP16/BF16 for speed" },
+    { id: "075", name: "gradient_checkpoint", title: "Gradient Checkpointing", module: 8, description: "Trade compute for memory" },
+    { id: "076", name: "flash_attention", title: "Flash Attention", module: 8, description: "IO-aware attention for efficiency" },
+    { id: "077", name: "model_parallel", title: "Model Parallelism", module: 8, description: "Split model across devices" },
+    { id: "078", name: "data_parallel", title: "Data Parallelism", module: 8, description: "Distribute data across GPUs" },
+    { id: "079", name: "pipeline_parallel", title: "Pipeline Parallelism", module: 8, description: "Pipeline stages across devices" },
+    { id: "080", name: "efficient_inference", title: "Efficient Inference", module: 8, description: "Optimize for production deployment" },
+
+    // Module 9: Applications (081-090)
+    { id: "081", name: "text_classification", title: "Text Classification", module: 9, description: "Classify documents and sentences" },
+    { id: "082", name: "sentiment_analysis", title: "Sentiment Analysis", module: 9, description: "Analyze sentiment and emotions" },
+    { id: "083", name: "qa", title: "Question Answering", module: 9, description: "Build QA systems with LLMs" },
+    { id: "084", name: "summarization", title: "Text Summarization", module: 9, description: "Generate concise summaries" },
+    { id: "085", name: "translation", title: "Machine Translation", module: 9, description: "Translate between languages" },
+    { id: "086", name: "code_generation", title: "Code Generation", module: 9, description: "Generate code from natural language" },
+    { id: "087", name: "dialogue", title: "Dialogue Systems", module: 9, description: "Build conversational AI" },
+    { id: "088", name: "information_extraction", title: "Information Extraction", module: 9, description: "Extract structured data from text" },
+    { id: "089", name: "text_to_sql", title: "Text-to-SQL", module: 9, description: "Convert natural language to SQL" },
+    { id: "090", name: "semantic_search", title: "Semantic Search", module: 9, description: "Search by meaning, not keywords" },
+
+    // Module 10: Research Frontiers (091-100)
+    { id: "091", name: "moe", title: "Mixture of Experts", module: 10, description: "Sparse expert models for scaling" },
+    { id: "092", name: "sparse_transformers", title: "Sparse Transformers", module: 10, description: "Efficient attention with sparsity" },
+    { id: "093", name: "long_context", title: "Long-Context Models", module: 10, description: "Handle extended context windows" },
+    { id: "094", name: "multimodal", title: "Multimodal LLMs", module: 10, description: "Vision, audio, and text together" },
+    { id: "095", name: "diffusion_lm", title: "Diffusion Language Models", module: 10, description: "Diffusion models for text generation" },
+    { id: "096", name: "continual_learning", title: "Continuous Learning", module: 10, description: "Learn continuously without forgetting" },
+    { id: "097", name: "model_editing", title: "Model Editing", module: 10, description: "Edit model knowledge directly" },
+    { id: "098", name: "interpretability", title: "Interpretability", module: 10, description: "Understand model decisions" },
+    { id: "099", name: "safety_alignment", title: "Safety & Alignment", module: 10, description: "Build safe and aligned AI" },
+    { id: "100", name: "future_directions", title: "Future Directions", module: 10, description: "Emerging trends and research" },
+];
+
+const MODULE_NAMES = {
+    1: "Foundations",
+    2: "Text Processing",
+    3: "Neural Networks",
+    4: "Transformers",
+    5: "Pre-training",
+    6: "Fine-tuning",
+    7: "Advanced Methods",
+    8: "Optimization",
+    9: "Applications",
+    10: "Research Frontiers"
+};

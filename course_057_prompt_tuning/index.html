@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course 057: Prompt Tuning</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 Course 057: Prompt Tuning</h1>
+            <p class="subtitle">Understanding N-gram Models and Probability Distributions</p>
+        </header>
+
+        <div class="control-panel">
+            <h2>📝 Training Data</h2>
+            <textarea id="trainText" rows="8" placeholder="Enter training text here...">The quick brown fox jumps over the lazy dog. The dog was sleeping under a tree. The fox was very quick and clever. A brown fox and a lazy dog became friends. They played together every day.</textarea>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label>
+                        <input type="checkbox" id="n1" checked> Unigram (n=1)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="n2" checked> Bigram (n=2)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="n3" checked> Trigram (n=3)
+                    </label>
+                </div>
+                <button id="trainBtn" class="btn-primary">🚀 Train Models</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Training models...</p>
+        </div>
+
+        <div id="results" style="display: none;">
+            <div class="metrics-grid">
+                <h2>📊 Model Comparison</h2>
+                <div id="metricsCards"></div>
+            </div>
+
+            <div class="visualization-section">
+                <h2>📈 Perplexity Comparison</h2>
+                <div id="perplexityChart"></div>
+            </div>
+
+            <div class="visualization-section">
+                <h2>🎲 Probability Distributions</h2>
+                <div class="tabs">
+                    <button class="tab-btn active" data-n="1">Unigram</button>
+                    <button class="tab-btn" data-n="2">Bigram</button>
+                    <button class="tab-btn" data-n="3">Trigram</button>
+                </div>
+                <div id="probabilityChart"></div>
+            </div>
+
+            <div class="generation-section">
+                <h2>✨ Text Generation</h2>
+                <div id="generatedTexts"></div>
+            </div>
+
+            <div class="details-section">
+                <h2>🔍 Model Details</h2>
+                <div id="modelDetails"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Course 057 - Prompt Tuning | Interactive Learning Platform</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

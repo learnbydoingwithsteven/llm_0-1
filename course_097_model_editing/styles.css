@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.control-panel {
+    padding: 30px;
+    background: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.control-panel h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+#trainText {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    font-size: 1em;
+    font-family: 'Courier New', monospace;
+    resize: vertical;
+    transition: border-color 0.3s;
+}
+
+#trainText:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.control-group {
+    display: flex;
+    gap: 20px;
+}
+
+.control-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.control-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.loading {
+    text-align: center;
+    padding: 60px;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.metrics-grid {
+    padding: 30px;
+}
+
+.metrics-grid h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+#metricsCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.metric-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 5px solid;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card.n1 { border-color: #ff6b6b; }
+.metric-card.n2 { border-color: #4ecdc4; }
+.metric-card.n3 { border-color: #45b7d1; }
+
+.metric-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.metric-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.metric-item:last-child {
+    border-bottom: none;
+}
+
+.metric-label {
+    font-weight: 600;
+    color: #666;
+}
+
+.metric-value {
+    font-weight: bold;
+    color: #333;
+}
+
+.visualization-section {
+    padding: 30px;
+    background: white;
+}
+
+.visualization-section h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    background: #f8f9fa;
+}
+
+.tab-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+#perplexityChart, #probabilityChart {
+    min-height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.generation-section {
+    padding: 30px;
+    background: #f8f9fa;
+}
+
+.generation-section h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+#generatedTexts {
+    display: grid;
+    gap: 20px;
+}
+
+.generated-text {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.generated-text.n1 { border-color: #ff6b6b; }
+.generated-text.n2 { border-color: #4ecdc4; }
+.generated-text.n3 { border-color: #45b7d1; }
+
+.generated-text h4 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.generated-text p {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    color: #555;
+}
+
+.details-section {
+    padding: 30px;
+    background: white;
+}
+
+.details-section h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+#modelDetails {
+    display: grid;
+    gap: 20px;
+}
+
+.detail-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.detail-card h4 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.prediction-list {
+    display: grid;
+    gap: 10px;
+}
+
+.prediction-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prediction-word {
+    font-weight: 600;
+    min-width: 100px;
+}
+
+.prediction-bar {
+    flex: 1;
+    height: 20px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    position: relative;
+}
+
+.prediction-prob {
+    font-size: 0.9em;
+    color: #666;
+    min-width: 60px;
+    text-align: right;
+}
+
+footer {
+    background: #2d3748;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .control-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #metricsCards {
+        grid-template-columns: 1fr;
+    }
+}
