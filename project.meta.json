@@ -1,0 +1,57 @@
+﻿{
+    "$schema":  "../project.meta.schema.json",
+    "schemaVersion":  1,
+    "name":  "llm_0-1",
+    "title":  "100 LLM Courses: Zero to Hero",
+    "kind":  "git-repository",
+    "status":  "unknown",
+    "category":  "learning-lab",
+    "description":  "A high-quality learning lab project named Llm 0 1, built using static-html, python and focused on learning lab concepts with rich metadata.",
+    "tags":  [
+                 "learning-lab",
+                 "ai",
+                 "course"
+             ],
+    "priority":  "unset",
+    "owner":  "",
+    "paths":  {
+                  "relative":  "llm_0-1",
+                  "absolute":  "F:\\learnbydoingwithsteven\\llm_0-1"
+              },
+    "repo":  {
+                 "hasGit":  true,
+                 "remote":  "https://github.com/learnbydoingwithsteven/llm_0-1.git"
+             },
+    "stack":  [
+                  "static-html",
+                  "python"
+              ],
+    "entrypoints":  {
+                        "readme":  "README.md",
+                        "web":  "index.html"
+                    },
+    "signals":  {
+                    "hasReadme":  true,
+                    "hasPackageJson":  false,
+                    "hasIndexHtml":  true,
+                    "hasViteConfig":  false,
+                    "hasNextConfig":  false,
+                    "hasPython":  true,
+                    "hasNotebooks":  false
+                },
+    "children":  {
+                     "count":  100,
+                     "immediateProjectSignalCount":  100
+                 },
+    "activity":  {
+                     "lastModifiedLocal":  "2026-05-11T22:41:08",
+                     "inferredActivity":  "hot"
+                 },
+    "notes":  "",
+    "metadata":  {
+                     "generated":  true,
+                     "generatedAt":  "2026-05-23T10:55:25Z",
+                     "generatedBy":  "tools/update_project_metadata.ps1",
+                     "confidence":  "inferred"
+                 }
+}
